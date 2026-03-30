@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr"> <!-- lefttablerow - выравнимает текст слева изначально -->
+  <head>
+    <meta charset="utf-8">                            <!-- кодирования, работающая по стандарту Unicode -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="article">       <!-- тип добавляемого материала, например, «article» – статья, «movie» — кино и так далее; -->
+    <meta property="og:url" content="{ссылка}">       <!-- ссылка на саму веб-страницу, которая добавляется в социальную сеть -->
+    <meta property="og:title" content="название">     <!-- название материала; -->
+    <meta property="og:description" content="текст">  <!-- описание материала, заполнять не обязательно; -->
+    <meta property="og:image" content="{картинка}">   <!-- ссылка на картинку, которая должна сопровождать материал; -->
+    <title>wuwei</title> <!-- Write here your project name -->
+      <!-- <link rel="icon" href="./images/favicon.png"> отображаетмя в шапке - важно не забывать -->
+      <link href="./css/style.css" rel="stylesheet" type="text/css"/>
+      <!-- <script src="./javascript/js.js" charset="utf-8"></script> -->
+  </head>
+  <body>
+
+    <section class="firstpage">
+      <div class="dom"> 
+         <img src="./img/karkas.png" alt="karkas" class="karkas">
+          <img src="./img/tittle.png" alt="title" class="title" id="openIntro">
+          <img src="./img/karkasnojka.png" alt="karkas" class="karkasnojka">
+
+          <div class="popup hidden" id="introPopup">
+            <img src="./img/information.png" alt="information" class="popup-img">
+            <button class="close-btn" id="closePopup">
+              <img src="./img/zakritie.png" alt="close">
+            </button>
+          </div>
+        </div>
+     
+          <div class="column1">
+
+             <div class="teascene">
+           <img src="./img/tearoom.png" alt="teascene" class="teaback">
+           <img src="./img/pandatea.svg" alt="pic" class="pandatea" id="openTea">
+            <img src="./img/tabletea.svg" alt="pic" class="tabletea">
+           <img src="./img/bamboo.svg" alt="pic" class="bamboo">
+           <img src="./img/bamboo2.svg" alt="pic" class="bamboo2">
+            <img src="./img/svitok.png" alt="pic" class="svitok">
+             <img src="./img/par.svg" alt="pic" class="par">
+
+             <div class="popuptea hidden" id="popuptea">
+                
+                <button class="close" id="closetea">
+                  <img src="./img/zakritie.png" alt="close">
+                </button>
+
+                <div class="plashka">
+                  <img src="./img/scrollplashka.png" alt="plashka" class="scroll">
+                  <div class="rulebox">
+                      <div class="gametitle" id="gametitle">Положи листья<br>в нужный чайник</div>
+                      </div>
+                  <img src="./img/pinkteapot.svg" alt="teapot" class="teapot pink" data-zone="pink">
+                  <img src="./img/blackteapot.svg" alt="teapot" class="teapot black" data-zone="black">
+                  <img src="./img/greenteapot.svg" alt="teapot" class="teapot green" data-zone="green">
+
+                   <img src="./img/pinkleafes.svg" class="leaf leafpink" draggable="true" data-leaf="pink" alt="pink leaves"> 
+                   <img src="./img/blackleaves.svg" class="leaf leafblack" draggable="true" data-leaf="black" alt="black leaves">
+                   <img src="./img/greeleafes.svg" class="leaf leafgreen" draggable="true" data-leaf="green" alt="green leaves">
+                </div>
+                
+             </div>
+
+           </div>
+
+             <div class="tablescene">
+               <img src="./img/tableroom.png" alt="table" class="tableback">
+              <img src="./img/morkovka.svg" alt="dish" class="dish morkov">
+                  <p class="dish-text hidden"> Овощи символизируют баланс 
+и естественность. Лёгкие растительные ингредиенты уравновешивают насыщенные блюда, отражая философию 
+Инь и Ян как гармонию противоположностей.</p>
+
+               <img src="./img/pelmeni.svg" alt="dish2" class="pelmeni">
+               <img src="./img/ric.svg" alt="dish3" class="ric">
+               <img src="./img/chainik.svg" alt="dish4" class="chainik">
+               <img src="./img/chicken.svg" alt="dish5" class="chicken">
+               <img src="./img/pokes.svg" alt="dish6" class="pokes">
+               <img src="./img/udon.svg" alt="dish7" class="udon">
+               <img src="./img/zelen.svg" alt="dish8" class="zelen">
+               <img src="./img/zelen2.svg" alt="dish9" class="zelen2">
+               <img src="./img/ziandsi.svg" alt="dish10" class="ziandsi">
+
+                 <div class="dishpopup hidden" id="dishPopup">
+                     <p id="dishText"></p>
+                   </div>
+                   
+             </div>
+           </div>
+       
+    </section>
+
+
+     <section class="secondpage">
+      <div class="dom2"> 
+         <img src="./img/karkas23.png" alt="karkas" class="karkas2">
+         <img src="./img/karkas3.png" alt="karkas" class="karkas3">
+        </div>
+
+         <div class="tronzal">
+             <img src="./img/centrezal.svg" alt="pic" class="zal" >
+             <img src="./img/pandalevo.svg" alt="pic" class="pandalevo">
+             <img src="./img/pandacentre.svg" alt="pic" class="pandacentre">
+             <img src="./img/pandapravo.svg" alt="pic" class="pandapravo">
+             <img src="./img/phonarik.svg" alt="pic" class="phonarik">
+
+                <div class="popuplovi hidden" id="popuplovi">
+
+                     <button class="closelovi" id="closelovi">
+                            <img src="./img/zakritie.png" alt="close">
+                      </button>
+
+                      <div class="lovirules" id="lovirules">
+                          <img src="./img/scrollplashka.png" class="rules">
+                                <div class="rulestext"> Двигай панду,<br> чтобы поймать свитки и фонарики<br><br> нажми, чтобы начать </div>
+                       </div>
+
+                       <img src="./img/lovititle.svg" class="lovititle">
+                       <img src="./img/moneytitle.svg" class="score"> <span id="scoreDisplay">0</span> 
+
+                       <div id="polelovli">
+                            <div id="fallingLayer"></div>
+                             <img src="./img/pandalovi.svg" id="catcher">
+                             <img src="./img/point.svg" alt="ponts" id="plusTen" class="hidden">
+                        </div>
+
+                        <div id="winOverlay" class="hidden overlay">
+                            <img src="./img/scrollplashka.png">
+                              <div class="overlaytext">  <h2>Победа!</h2>  
+                                  <button id="restartWin">ещё раз</button> 
+                               </div>
+                          </div>
+
+                          <div id="loseOverlay" class="hidden overlay">
+                              <img src="./img/scrollplashka.png">
+                                <div class="overlaytext">  <h2>Попробуй ещё</h2>
+                                    <button id="restartLose">ещё раз</button>
+                                  </div>
+                             </div>
+                 </div>
+           </div>
+     </section>
+
+     <section class="thirdpage">
+
+      <div class="dom3"> 
+         <img src="./img/karkas23.png" alt="karkas" class="karkas4">
+         <img src="./img/karkas3.png" alt="karkas" class="karkas5">
+         <img src="./img/karkasnojka.png" alt="karkas" class="karkasnojka2">
+
+        </div>
+
+        <div class="column2">
+
+            <div class="veerascene">
+              <img src="./img/veerascene.png" alt="pic" class="backveer">
+              <img src="./img/levoveer.svg" alt="pic" class="levoveer">
+              <img src="./img/levoveer.svg" alt="pic" class="levoveer2">
+              <img src="./img/levoveer.svg" alt="pic" class="levoveer3">
+              <img src="./img/levoveer.svg" alt="pic" class="levoveer4">
+              <img src="./img/veercentre.svg" alt="pic" class="centreveer">
+              <img src="./img/veercentre.svg" alt="pic" class="centreveer2">
+              <img src="./img/veercentre.svg" alt="pic" class="centreveer3">
+              <img src="./img/veercentre.svg" alt="pic" class="centreveer4">
+              <img src="./img/veercentre.svg" alt="pic" class="centreveer5">
+               <img src="./img/veercentre.svg" alt="pic" class="centreveer6">
+              <img src="./img/pravoveer.svg" alt="pic" class="pravoveer">
+              <img src="./img/pravoveer.svg" alt="pic" class="pravoveer2">
+              <img src="./img/pravoveer.svg" alt="pic" class="pravoveer3">
+               <img src="./img/pravoveer.svg" alt="pic" class="pravoveer3">
+              <img src="./img/pandaveer.svg" alt="pic" class="artistpanda">
+            </div>
+
+            <div class="trenirovki">
+              <img src="./img/trenzal.png" alt="pic" class="trenback">
+              <img src="./img/inyan.svg" alt="pic" class="inyan">
+              <!-- <img src="./img/pandac2veerami.svg" alt="pic" class="panda2veera">
+              <img src="./img/pandacentre.svg" alt="pic" class="pandacentre2">
+              <img src="./img/pandapravo.svg" alt="pic" class="pandapravo2">
+              <img src="./img/pandacveerom.svg" alt="pic" class="pandacveerom">
+              <img src="./img/krasniipandikiveer.svg" alt="pic" class="krasnipand">
+              <img src="./img/pandikcveerkom.svg" alt="pic" class="pandikcveerkom"> -->
+
+            </div>
+        </div>
+       </section>
+
+
+       <section class="podvalpage">
+        <img src="./img/pochva.png" alt="pic" class="pochva">
+        <img src="./img/podval.png" alt="pic" class="podvalimg">
+
+       </section>
+    
+<script src="./javascript/js.js" charset="utf-8"></script>
+  
+ 
+  </body>
+</html>
