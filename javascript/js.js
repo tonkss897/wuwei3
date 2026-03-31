@@ -1014,4 +1014,23 @@ popupVeer.addEventListener('click', (e) => {
   if (e.target === popupVeer) closeVeerPopup();
 });
 
+// панды на карточках
+// const trenPandas = document.querySelectorAll('.trenpanda');
+
+// function showRandomPanda() {
+  
+//   trenPandas.forEach(p => p.classList.remove('visible'));
+
+ 
+//   const rand = Math.floor(Math.random() * trenPandas.length);
+//   trenPandas[rand].classList.add('visible');
+
+  
+//   const delay = 1500 + Math.random() * 2000;
+//   setTimeout(showRandomPanda, delay);
+// }
+
+
+// showRandomPanda();
+
 });
