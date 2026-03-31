@@ -400,6 +400,65 @@ html, body{
   /* width: 100vw; */
 }
 
+ .tableback::before,
+.tableback::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+}
+
+.tablescene::before {
+  content: '';
+  position: absolute;
+  top: 37vw;
+  left: 56vw;
+  width: 40vw;
+  height: 28vw;
+  z-index: 6;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.9) 0.07vw, transparent 0.07vw) 5% 15% / 0.5vw 0.5vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.7) 0.07vw, transparent 0.07vw) 15% 8%  / 0.4vw 0.4vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.9) 0.07vw, transparent 0.07vw) 28% 20% / 0.6vw 0.6vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.6) 0.07vw, transparent 0.07vw) 42% 5%  / 0.3vw 0.3vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.8) 0.07vw, transparent 0.07vw) 58% 18% / 0.5vw 0.5vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.7) 0.07vw, transparent 0.07vw) 70% 10% / 0.4vw 0.4vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.9) 0.07vw, transparent 0.07vw) 82% 22% / 0.6vw 0.6vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.6) 0.07vw, transparent 0.07vw) 90% 6%  / 0.3vw 0.3vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.8) 0.07vw, transparent 0.07vw) 35% 30% / 0.5vw 0.5vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.7) 0.07vw, transparent 0.07vw) 50% 12% / 0.4vw 0.4vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.5) 0.07vw, transparent 0.07vw) 22% 35% / 0.3vw 0.3vw no-repeat,
+    radial-gradient(circle, rgba(255,255,255,0.9) 0.07vw, transparent 0.07vw) 75% 28% / 0.5vw 0.5vw no-repeat;
+  animation: startwinkle 3s ease-in-out infinite alternate;
+}
+
+.tablescene::after {
+  content: '';
+  position: absolute;
+  top: 37vw;
+  left: 56vw;
+  width: 40vw;
+  height: 28vw;
+  z-index: 6;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(255,255,220,0.8) 0.07vw, transparent 0.07vw) 10% 25% / 0.4vw 0.4vw no-repeat,
+    radial-gradient(circle, rgba(255,255,220,0.6) 0.07vw, transparent 0.07vw) 33% 12% / 0.5vw 0.5vw no-repeat,
+    radial-gradient(circle, rgba(255,255,220,0.9) 0.07vw, transparent 0.07vw) 55% 28% / 0.3vw 0.3vw no-repeat,
+    radial-gradient(circle, rgba(255,255,220,0.7) 0.07vw, transparent 0.07vw) 78% 15% / 0.6vw 0.6vw no-repeat,
+    radial-gradient(circle, rgba(255,255,220,0.8) 0.07vw, transparent 0.07vw) 88% 32% / 0.4vw 0.4vw no-repeat,
+    radial-gradient(circle, rgba(255,255,220,0.6) 0.07vw, transparent 0.07vw) 45% 22% / 0.5vw 0.5vw no-repeat;
+  animation: startwinkle 3s ease-in-out infinite alternate-reverse;
+  animation-delay: 1.5s;
+}
+
+@keyframes startwinkle {
+  0%   { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
 .tableback {
   position: absolute;
   /* margin-top: 37vw;    */
@@ -437,7 +496,7 @@ html, body{
 
 .dishpopup {
     position: absolute;
-    width: 14vw;
+    width: 18vw;
     height: 9vw;
     left: 60vw;
     top: 68vw;
@@ -1318,9 +1377,9 @@ html, body{
   z-index: 12;
 }
 
-/* #veercanvas.brush-cursor {
+#veercanvas.brush-cursor {
   cursor: url('./img/brush.png') 4 28, crosshair;
-} */
+}
 
 .veerrules {
   position: absolute;
@@ -1428,4 +1487,124 @@ html, body{
     justify-content: center;
     align-items: center; */
 }
+
+
+@keyframes steam {
+  0%, 100% { transform: translateY(0) scaleX(1); opacity: 0.8; }
+  50% { transform: translateY(-6px) scaleX(1.08); opacity: 0.4; }
+}
+.par {
+  animation: steam 2.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+
+@keyframes pandabob {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+.pandatea {
+  animation: pandabob 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+
+@keyframes bamboowave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1.5deg); }
+}
+.bamboo {
+  animation: bamboowave 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.bamboo2 {
+  animation: bamboowave 3.5s ease-in-out infinite reverse;
+  transform-origin: bottom center;
+}
+
+
+@keyframes lantern {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.phonarik {
+  animation: lantern 3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+
+@keyframes veershine {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.82; }
+}
+.centreveer, .centreveer2, .centreveer3 {
+  animation: veershine 3s ease-in-out infinite;
+}
+.centreveer4, .centreveer5, .centreveer6 {
+  animation: veershine 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+
+@keyframes veertilt {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+}
+.levoveer { animation: veertilt 4s ease-in-out infinite; transform-origin: bottom center; }
+.levoveer2 { animation: veertilt 4s ease-in-out infinite; animation-delay: 0.8s; transform-origin: bottom center; }
+.levoveer3 { animation: veertilt 4s ease-in-out infinite; animation-delay: 1.6s; transform-origin: bottom center; }
+.levoveer4 { animation: veertilt 4s ease-in-out infinite; animation-delay: 2.4s; transform-origin: bottom center; }
+.pravoveer { animation: veertilt 4s ease-in-out infinite reverse; transform-origin: bottom center; }
+.pravoveer2 { animation: veertilt 4s ease-in-out infinite reverse; animation-delay: 1s; transform-origin: bottom center; }
+.pravoveer3 { animation: veertilt 4s ease-in-out infinite reverse; animation-delay: 2s; transform-origin: bottom center; }
+
+
+.artistpanda {
+  animation: pandabob 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+
+@keyframes yinspin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.inyan {
+  animation: yinspin 12s linear infinite;
+}
+
+
+@keyframes floatscroll {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.svitok {
+  animation: floatscroll 3.5s ease-in-out infinite;
+}
+
+
+.pandalevo {
+  animation: pandabob 3.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.pandacentre {
+  animation: pandabob 3s ease-in-out infinite;
+  animation-delay: 0.7s;
+  transform-origin: bottom center;
+}
+.pandapravo {
+  animation: pandabob 4s ease-in-out infinite;
+  animation-delay: 1.4s;
+  transform-origin: bottom center;
+}
+
+/* .trenpanda {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.trenpanda.visible {
+  opacity: 1;
+} */
 
