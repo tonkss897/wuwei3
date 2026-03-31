@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ru" dir="ltr"> <!-- lefttablerow - выравнимает текст слева изначально -->
+<html lang="ru" dir="ltr"> 
   <head>
-    <meta charset="utf-8">                            <!-- кодирования, работающая по стандарту Unicode -->
+    <meta charset="utf-8">                           
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="article">       <!-- тип добавляемого материала, например, «article» – статья, «movie» — кино и так далее; -->
     <meta property="og:url" content="{ссылка}">       <!-- ссылка на саму веб-страницу, которая добавляется в социальную сеть -->
@@ -9,10 +9,10 @@
     <meta property="og:description" content="текст">  <!-- описание материала, заполнять не обязательно; -->
     <meta property="og:image" content="{картинка}">   <!-- ссылка на картинку, которая должна сопровождать материал; -->
     <title>wuwei</title> <!-- Write here your project name -->
-      <!-- <link rel="icon" href="./images/favicon.png"> отображаетмя в шапке - важно не забывать -->
+      <link rel="icon" href="./img/free-icon-panda-8372043.png"> 
       <link href="./css/style.css" rel="stylesheet" type="text/css"/>
       <!-- <script src="./javascript/js.js" charset="utf-8"></script> -->
-  </head> 
+  </head>
   <body>
 
     <section class="firstpage">
@@ -30,7 +30,7 @@
         </div>
      
           <div class="column1">
-<!-- <img src="./img/tearoom.png"> -->
+
              <div class="teascene">
            <img src="./img/tearoom.png" alt="teascene" class="teaback">
            <img src="./img/pandatea.svg" alt="pic" class="pandatea" id="openTea">
@@ -99,7 +99,32 @@
 
          <div class="tronzal">
              <img src="./img/centrezal.svg" alt="pic" class="zal" >
-             <img src="./img/pandalevo.svg" alt="pic" class="pandalevo">
+             <img src="./img/pandalevo.svg" alt="pic" id="openDragon" class="pandalevo">
+
+             <div class="popupdragon hidden" id="popupdragon">
+
+                   <button class="closedragon" id="closedragon">
+                      <img src="./img/zakritie.png" alt="close">
+                     </button>
+                     
+                     <div class="dragonrules hidden" id="dragonrules">
+                       <img src="./img/scrollplashka.png" class="dragonrulesbg" alt="rules">
+                        <div class="dragonrulestext"> Собери дракона,<br> передвигая соседние плитки<br><br>нажми, чтобы начать </div>
+                      </div>
+                      
+                      <div class="dragontitlewrap">
+                         <div class="dragontitle">Собери дракона</div>
+                         </div>
+                         
+                       <img src="./img/dragonfull.png" alt="dragon reference" class="dragonreference">
+                       <div class="dragonboard" id="dragonboard"></div>
+                       
+                       <div class="dragonwin hidden" id="dragonwin">
+                         <img src="./img/scrollplashka.png" class="dragonwinbg" alt="win">
+                         <div class="dragonwintext"> <h2>Молодец!</h2> <button id="restartDragon">ещё раз</button></div>
+                        </div>
+                </div>
+
              <img src="./img/pandacentre.svg" alt="pic" class="pandacentre">
              <img src="./img/pandapravo.svg" alt="pic" class="pandapravo">
              <img src="./img/phonarik.svg" alt="pic" class="phonarik">
@@ -111,8 +136,9 @@
                       </button>
 
                       <div class="lovirules" id="lovirules">
-                          <img src="./img/scrollplashka.png" class="rules">
-                                <div class="rulestext"> Двигай панду,<br> чтобы поймать свитки и фонарики<br><br> нажми, чтобы начать </div>
+                          <img src="./img/rules.png" class="rules">
+                          <img src="./img/buttonpon.png" alt="rules" class="ponbtn">
+                                <!-- <div class="rulestext"> Двигай панду,<br> чтобы поймать свитки и фонарики<br><br> нажми, чтобы начать </div> -->
                        </div>
 
                        <img src="./img/lovititle.svg" class="lovititle">
@@ -122,20 +148,23 @@
                             <div id="fallingLayer"></div>
                              <img src="./img/pandalovi.svg" id="catcher">
                              <img src="./img/point.svg" alt="ponts" id="plusTen" class="hidden">
-                        </div>
 
-                        <div id="winOverlay" class="hidden overlay">
-                            <img src="./img/scrollplashka.png">
-                              <div class="overlaytext">  <h2>Победа!</h2>  
-                                  <button id="restartWin">ещё раз</button> 
+                             <div id="winOverlay" class="hidden overlay">
+                            <img src="./img/win.png">
+                              <!-- <div class="overlaytext">  <h2>Победа!</h2>   -->
+                                  <button  id="restartWin"> <img src="./img/daleebtn.png" alt="button" ></button> 
                                </div>
-                          </div>
+                         <!-- </div> -->
 
                           <div id="loseOverlay" class="hidden overlay">
-                              <img src="./img/scrollplashka.png">
-                                <div class="overlaytext">  <h2>Попробуй ещё</h2>
-                                    <button id="restartLose">ещё раз</button>
+                              <img src="./img/fall.png">
+                                <!-- <div class="overlaytext">  <h2>Попробуй ещё</h2> -->
+                                    <button  id="restartLose"> <img src="./img/buttonzanovo.png" alt="button"  id="restart"></button>
                                   </div>
+                        </div>
+
+                        
+                                  
                              </div>
                  </div>
            </div>
@@ -168,7 +197,27 @@
               <img src="./img/pravoveer.svg" alt="pic" class="pravoveer2">
               <img src="./img/pravoveer.svg" alt="pic" class="pravoveer3">
                <img src="./img/pravoveer.svg" alt="pic" class="pravoveer3">
-              <img src="./img/pandaveer.svg" alt="pic" class="artistpanda">
+              <img src="./img/pandaveer.svg" alt="pic" class="artistpanda" id="openFan">
+
+              <div class="popupveer hidden" id="popupveer">
+                 <button class="closeveer" id="closeveer">
+                   <img src="./img/zakritie.png" alt="close">
+                  </button>
+                  
+                  <div class="veerrules" id="veerrules">
+                     <img src="./img/rulesveer.png" alt="rules" class="veerrulesimg">
+                     
+                     <button class="ponyatnobtn" id="veerUnderstand"> <img src="./img/btnveerpon.png" alt="btn"> </button>
+                   </div>
+                   
+                   <div class="veerboard" id="veerboard">
+                    <img src="./img/bigwhiteveer.svg" alt="pic" class="whiteveer" id="whiteveerimg">
+                    <canvas id="veercanvas" width="1400" height="800"></canvas>
+                  </div>
+
+                   <button class="clearveer" id="clearveer">Очистить</button>
+                </div>
+
             </div>
 
             <div class="trenirovki">
