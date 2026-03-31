@@ -684,6 +684,169 @@ html, body{
    z-index: 14;
 }
 
+.popupdragon {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 999;
+}
+
+.closedragon {
+  position: absolute;
+  top: 6vw;
+  left: 50%;
+  transform: translateX(20vw);
+  width: 3vw;
+  height: 3vw;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.closedragon img {
+  width: 100%;
+  display: block;
+}
+
+.dragontitlewrap {
+  position: absolute;
+  top: 2vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.dragontitle {
+  background: #8f2f00;
+  color: #ffd84a;
+  padding: 1vw 4vw;
+  border-radius: 1vw;
+  font-size: 2vw;
+  font-weight: 700;
+  text-align: center;
+  border: 0.2vw solid #5d1d00;
+}
+
+.dragonreference {
+  position: absolute;
+  top: 8vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18vw;
+  height: 18vw;
+  background: #f0f0f0;
+  z-index: 15;
+}
+
+.dragonreference img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dragonboard {
+  position: absolute;
+  top: 28vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24vw;
+  height: 24vw;
+  background: #f0f0f0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  z-index: 15;
+  border: 0.15vw solid #d5d5d5;
+}
+
+.dragontile {
+  width: 100%;
+  height: 100%;
+  border: 0.05vw solid rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  cursor: pointer;
+  background: #efefef;
+}
+
+.dragontile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dragontile.empty {
+  background: transparent;
+  cursor: default;
+}
+
+.dragonrules {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  cursor: pointer;
+}
+
+.dragonrulesbg {
+  width: 22vw;
+}
+
+.dragonrulestext {
+  position: absolute;
+  width: 16vw;
+  text-align: center;
+  font-size: 1.2vw;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #6b2b12;
+}
+
+.dragonwin {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 55;
+}
+
+.dragonwinbg {
+  width: 22vw;
+}
+
+.dragonwintext {
+  position: absolute;
+  width: 16vw;
+  text-align: center;
+  color: #6b2b12;
+}
+
+.dragonwintext h2 {
+  font-size: 2vw;
+  margin-bottom: 1vw;
+}
+
+.dragonwintext button {
+  border: none;
+  background: #8f2f00;
+  color: #ffd84a;
+  border-radius: 2vw;
+  padding: 0.8vw 1.5vw;
+  font-size: 1vw;
+  cursor: pointer;
+}
+
+/* .hidden {
+  display: none;
+} */
+
 .pandacentre{
   width: 22.5vw;
   height: auto;
@@ -750,17 +913,32 @@ html, body{
 }
 
 .rules{
-  width: 24vw;
+  position: absolute;
+  width: 30vw;
+  height: 40vw;
+  display: flex;
+   justify-content: center;
+  align-items: center;
+   /* background: rgba(0,0,0,0.55); */
+   top: 6.5vw;
+  
 }
 
-.rulestext {
+.ponbtn{
+  width: 13.8vw;
+  height: 6vw;
+  top: 38vw;
+  position: absolute;
+}
+
+/* .rulestext {
   position: absolute;
   width: 20vw;
   text-align: center;
   font-size: 1.2vw;
   color: #6b2b12;
   font-weight: 700;
-}
+} */
 
 .lovititle {
   position: absolute;
@@ -768,6 +946,7 @@ html, body{
   left: 50%;
   transform: translateX(-50%);
   width: 42vw;
+  z-index: 100;
 }
 
 .score {
@@ -789,9 +968,9 @@ html, body{
 
 #polelovli {
   position: relative;
-  width: 100%;
-  height: 34vw;
-  background-color#f4b8c1; ;
+  width: 29vw;
+  height: 36vw;
+  background-color:#f4b8c1; 
   border-radius: 1vw;
 
   /* inset: 0; */
@@ -804,8 +983,8 @@ html, body{
   top: 0;
   left: 0;
   /* transform: translateX(-50%); */
-  width: 100vw;
-  height: 100vw;
+  width: 100%;
+  height: 100%;
   /* background: #e6b8bb;
   border-radius: 1.5vw; */
    pointer-events: none;
@@ -827,7 +1006,7 @@ html, body{
   bottom: 0.5vw;
   left: 50%;
   transform: translateX(-50%);
-  width: 16vw;
+  width: 10vw;
   z-index: 15;
   pointer-events: none;
 }
@@ -854,17 +1033,40 @@ html, body{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  z-index: 100;
+  background: rgba(244, 184, 193, 0.85);
 }
 
-.overlay img {
+.overlay button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  bottom: 30.8%;
+
+}
+
+.overlay button img {
+  width: 14vw;
+  display: block;
+  top: 2vw;
+}
+
+.overlay > img {
+  width: 28vw;
+}
+
+/* .overlay img {
   width: 24vw;
-}
+} */
 
-.overlaytext {
+/* .overlaytext {
   position: absolute;
   text-align: center;
   color: #6b2b12;
-}
+} */
 
 
 .thirdpage {
@@ -1060,7 +1262,116 @@ html, body{
   left: 19vw;
   top: 37vw;
    z-index: 14;
+   cursor: pointer;
 }
+
+.popupveer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 999;
+}
+
+.closeveer {
+  position: absolute;
+  top: 4vw;
+  left: 50%;
+  transform: translateX(24vw);
+  width: 3vw;
+  height: 3vw;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.closeveer img {
+  width: 100%;
+  display: block;
+}
+
+.veerboard {
+  position: absolute;
+  top: 10vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46vw;
+  height: 28vw;
+  z-index: 10;
+}
+
+.whiteveer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 11;
+  pointer-events: none;
+}
+
+#veercanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+}
+
+/* #veercanvas.brush-cursor {
+  cursor: url('./img/brush.png') 4 28, crosshair;
+} */
+
+.veerrules {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.veerrulesimg {
+  width: 26vw;
+  display: block;
+}
+
+.ponyatnobtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10vw);
+  width: 12vw;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ponyatnobtn img {
+  width: 100%;
+  display: block;
+}
+
+.clearveer {
+  position: absolute;
+  top: 40vw;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  background: #8f2f00;
+  color: #ffd84a;
+  border-radius: 2vw;
+  padding: 0.8vw 1.6vw;
+  font-size: 1vw;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* .hidden {
+  display: none;
+} */
 
 
 .trenirovki{
