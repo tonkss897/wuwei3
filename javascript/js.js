@@ -509,7 +509,8 @@ let items = [];
 
 const itemSources = [
   './img/phonarik2.svg',
-  './img/svitokgame.svg'
+  './img/svitokgame.svg',
+   './img/phonarik.svg',
 ];
 
 function openLoviGame() {
@@ -704,19 +705,313 @@ loviRules.addEventListener('click', () => {
 });
 
 restartWin.addEventListener('click', () => {
-  resetLoviGame();
-  loviRules.classList.remove('hidden');
+  closeLoviGame(); // закрывает попап, возвращает к плакату
 });
 
 restartLose.addEventListener('click', () => {
   resetLoviGame();
-  loviRules.classList.remove('hidden');
+  loviRules.classList.remove('hidden'); // показывает правила — игра заново
 });
 
 popupLovi.addEventListener('click', (e) => {
   if (e.target === popupLovi) {
     closeLoviGame();
   }
+});
+
+// клик на панду слева игра дракон
+
+
+
+const openDragon = document.getElementById('openDragon');
+const popupDragon = document.getElementById('popupdragon');
+const closeDragon = document.getElementById('closedragon');
+const dragonRules = document.getElementById('dragonrules');
+const dragonBoard = document.getElementById('dragonboard');
+const dragonWin = document.getElementById('dragonwin');
+const restartDragon = document.getElementById('restartDragon');
+
+const DRAGON_SIZE = 4;
+let dragonTiles = [];
+let emptyIndex = 0;
+
+function createSolvedDragonTiles() {
+  return [
+    null, 0, 1, 2,
+    3, 4, 5, 6,
+    7, 8, 9, 10,
+    11, 12, 13, 14
+  ];
+}
+
+function getDragonNeighbors(index) {
+  const neighbors = [];
+  const row = Math.floor(index / DRAGON_SIZE);
+  const col = index % DRAGON_SIZE;
+
+  if (row > 0) neighbors.push(index - DRAGON_SIZE);
+  if (row < DRAGON_SIZE - 1) neighbors.push(index + DRAGON_SIZE);
+  if (col > 0) neighbors.push(index - 1);
+  if (col < DRAGON_SIZE - 1) neighbors.push(index + 1);
+
+  return neighbors;
+}
+
+function isDragonAdjacent(a, b) {
+  const rowA = Math.floor(a / DRAGON_SIZE);
+  const colA = a % DRAGON_SIZE;
+  const rowB = Math.floor(b / DRAGON_SIZE);
+  const colB = b % DRAGON_SIZE;
+
+  const sameRow = rowA === rowB && Math.abs(colA - colB) === 1;
+  const sameCol = colA === colB && Math.abs(rowA - rowB) === 1;
+
+  return sameRow || sameCol;
+}
+
+function checkDragonWin() {
+ const solved = [
+    null, 0, 1, 2,
+    3, 4, 5, 6,
+    7, 8, 9, 10,
+    11, 12, 13, 14
+  ];
+
+  for (let i = 0; i < solved.length; i++) {
+    if (dragonTiles[i] !== solved[i]) return false;
+  }
+
+  return true;
+}
+
+function renderDragonBoard() {
+  dragonBoard.innerHTML = '';
+
+  dragonTiles.forEach((value, index) => {
+    const tile = document.createElement('div');
+    tile.classList.add('dragontile');
+
+    if (value === null) {
+      tile.classList.add('empty');
+    } else {
+      const img = document.createElement('img');
+      img.src = `./img/dragontile${value + 1}.png`;
+      img.alt = `tile ${value + 1}`;
+      tile.appendChild(img);
+
+      tile.addEventListener('click', () => {
+        moveDragonTile(index);
+      });
+    }
+
+    dragonBoard.appendChild(tile);
+  });
+}
+
+function moveDragonTile(index) {
+  if (!isDragonAdjacent(index, emptyIndex)) return;
+
+  [dragonTiles[index], dragonTiles[emptyIndex]] = [dragonTiles[emptyIndex], dragonTiles[index]];
+  emptyIndex = index;
+
+  renderDragonBoard();
+
+  if (checkDragonWin()) {
+    dragonWin.classList.remove('hidden');
+  }
+}
+
+function shuffleDragonBoard() {
+  let shuffleMoves = 120;
+  let currentEmpty = emptyIndex;
+
+  while (shuffleMoves > 0) {
+    const neighbors = getDragonNeighbors(currentEmpty);
+    const randomNeighbor = neighbors[Math.floor(Math.random() * neighbors.length)];
+
+    [dragonTiles[randomNeighbor], dragonTiles[currentEmpty]] = [dragonTiles[currentEmpty], dragonTiles[randomNeighbor]];
+    currentEmpty = randomNeighbor;
+    shuffleMoves--;
+  }
+
+  emptyIndex = currentEmpty;
+
+  if (checkDragonWin()) {
+    shuffleDragonBoard();
+  }
+}
+
+function resetDragonGame() {
+  dragonTiles = createSolvedDragonTiles();
+  emptyIndex = 0;
+  dragonWin.classList.add('hidden');
+  shuffleDragonBoard();
+  renderDragonBoard();
+}
+
+function openDragonGame() {
+  popupDragon.classList.remove('hidden');
+  dragonRules.classList.remove('hidden');
+  resetDragonGame();
+}
+
+function closeDragonGame() {
+  popupDragon.classList.add('hidden');
+  dragonWin.classList.add('hidden');
+}
+
+openDragon.addEventListener('click', openDragonGame);
+
+closeDragon.addEventListener('click', closeDragonGame);
+
+dragonRules.addEventListener('click', () => {
+  dragonRules.classList.add('hidden');
+});
+
+restartDragon.addEventListener('click', () => {
+  dragonWin.classList.add('hidden');
+  dragonRules.classList.remove('hidden');
+  resetDragonGame();
+});
+
+popupDragon.addEventListener('click', (e) => {
+  if (e.target === popupDragon) {
+    closeDragonGame();
+  }
+});
+
+
+// клик на панду художника открытие веера
+
+const openVeer = document.getElementById('openFan');
+const popupVeer = document.getElementById('popupveer');
+const closeVeer = document.getElementById('closeveer');
+const veerRules = document.getElementById('veerrules');
+const veerUnderstand = document.getElementById('veerUnderstand');
+const clearVeer = document.getElementById('clearveer');
+
+const veerCanvas = document.getElementById('veercanvas');
+const veerCtx = veerCanvas.getContext('2d');
+const whiteVeerImg = document.getElementById('whiteveerimg');
+
+let isDrawingVeer = false;
+let canDrawVeer = false;
+let veerMaskReady = false;
+let veerAlphaData = null;
+
+function openVeerPopup() {
+  popupVeer.classList.remove('hidden');
+  veerRules.classList.remove('hidden');
+  canDrawVeer = false;
+  isDrawingVeer = false;
+  veerCanvas.style.cursor = 'default';
+}
+
+function closeVeerPopup() {
+  popupVeer.classList.add('hidden');
+  veerRules.classList.remove('hidden');
+  canDrawVeer = false;
+  isDrawingVeer = false;
+  veerCanvas.style.cursor = 'default';
+}
+
+function clearVeerCanvas() {
+  veerCtx.clearRect(0, 0, veerCanvas.width, veerCanvas.height);
+}
+
+function getVeerCanvasPos(e) {
+  const rect = veerCanvas.getBoundingClientRect();
+  const scaleX = veerCanvas.width / rect.width;
+  const scaleY = veerCanvas.height / rect.height;
+  return {
+    x: Math.round((e.clientX - rect.left) * scaleX),
+    y: Math.round((e.clientY - rect.top) * scaleY)
+  };
+}
+
+function prepareVeerMask() {
+  const img = whiteVeerImg;
+
+  function buildMask() {
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = veerCanvas.width;
+    tempCanvas.height = veerCanvas.height;
+    const tempCtx = tempCanvas.getContext('2d');
+    tempCtx.clearRect(0, 0, tempCanvas.width, tempCanvas.height);
+    tempCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height);
+    veerAlphaData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height).data;
+    veerMaskReady = true;
+  }
+
+  if (img.complete && img.naturalWidth > 0) {
+    buildMask();
+  } else {
+    img.onload = buildMask;
+  }
+}
+
+function isInsideVeer(x, y) {
+  if (!veerMaskReady || !veerAlphaData) return true; // если маска не готова — разрешаем рисовать везде
+  if (x < 0 || y < 0 || x >= veerCanvas.width || y >= veerCanvas.height) return false;
+  const alphaIndex = (y * veerCanvas.width + x) * 4 + 3;
+  return veerAlphaData[alphaIndex] > 20;
+}
+
+function startVeerDrawing(e) {
+  if (!canDrawVeer) return;
+  const pos = getVeerCanvasPos(e);
+  isDrawingVeer = true;
+  veerCtx.beginPath();
+  veerCtx.moveTo(pos.x, pos.y);
+}
+
+function drawOnVeer(e) {
+  if (!isDrawingVeer || !canDrawVeer) return;
+  const pos = getVeerCanvasPos(e);
+
+  if (!isInsideVeer(pos.x, pos.y)) {
+    veerCtx.stroke();
+    veerCtx.beginPath();
+    isDrawingVeer = false;
+    return;
+  }
+
+  veerCtx.lineTo(pos.x, pos.y);
+  veerCtx.strokeStyle = '#c0392b';
+  veerCtx.lineWidth = 4;
+  veerCtx.lineCap = 'round';
+  veerCtx.lineJoin = 'round';
+  veerCtx.stroke();
+  veerCtx.beginPath();
+  veerCtx.moveTo(pos.x, pos.y);
+}
+
+function stopVeerDrawing() {
+  if (!isDrawingVeer) return;
+  isDrawingVeer = false;
+  veerCtx.closePath();
+}
+
+// события
+openVeer.addEventListener('click', openVeerPopup);
+closeVeer.addEventListener('click', closeVeerPopup);
+
+veerUnderstand.addEventListener('click', () => {
+  veerRules.classList.add('hidden');
+  canDrawVeer = true;
+  prepareVeerMask();
+  veerCanvas.style.cursor = 'crosshair'; // если brush.png не работает — оставь crosshair
+});
+
+clearVeer.addEventListener('click', clearVeerCanvas);
+
+veerCanvas.addEventListener('mousedown', startVeerDrawing);
+veerCanvas.addEventListener('mousemove', drawOnVeer);
+veerCanvas.addEventListener('mouseup', stopVeerDrawing);
+veerCanvas.addEventListener('mouseleave', stopVeerDrawing);
+
+popupVeer.addEventListener('click', (e) => {
+  if (e.target === popupVeer) closeVeerPopup();
 });
 
 });
