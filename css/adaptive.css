@@ -2,6 +2,398 @@
 /*  мобилка  */
 }
 
+@media screen and (max-width: 450px) {
+
+  /* html, body {
+    overflow-x: hidden;
+  } */
+
+  /* ---------- ОБЩАЯ ВЫСОТА СЕКЦИЙ ---------- */
+
+  .firstpage {
+    height: 255vw;
+  }
+
+  /* .secondpage {
+    position: relative;
+    width: 100vw;
+    height: 86vw;
+  } */
+
+  .thirdpage {
+    height: 185vw;
+  }
+
+  .podvalpage {
+    height: 44vw;
+  }
+
+  /* ---------- ВЕРХНИЙ ЭТАЖ ---------- */
+
+  .karkas {
+    width: 100vw;
+    height: 165vw;
+    /* top: 11vw; */
+  }
+
+  .karkasnojka {
+   display: none;
+  }
+
+  .title {
+    width: 36vw;
+    top: 38vw;
+    left: 32vw;
+     height: 15vw ;
+  }
+
+  .column1 {
+    /* position: relative;
+    z-index: 5;
+    display: flex; */
+    flex-direction: column;
+    align-items: center;
+    /* gap: 0; */
+  }
+
+  .teascene {
+    width: 100vw;
+    height: 100vw;
+    /* position: relative;
+    transform: scale(1.12);
+    transform-origin: top center; */
+    margin-top: 23vw;
+  }
+
+  .teaback {
+  /* position: absolute;
+  top: 37vw;   
+  left: 4vw;    */
+  width: 90vw;
+  height: 100vw;
+   z-index: 9;
+  }
+  
+
+  .tablescene {
+    width: 100vw;
+    height: 100vw;
+    position: relative;
+    transform: scale(1.12);
+    transform-origin: top center;
+    margin-top: -2vw;
+    left: -24vw;
+  }
+
+  .tableback {
+  /* position: absolute; */
+  /* margin-top: 37vw;    */
+  top: 25vw;
+  left: 32vw;   
+  width: 79vw;
+  height: 100vw;
+  /* z-index: 5; */
+}
+
+  .karkasfirstpage{
+  width: 98vw;
+    height: 14vw;
+    top: 150vw;
+    left: 1%;
+    display: flex;
+    position: absolute;
+    z-index: 11;
+    justify-content: center;
+    align-items: center;
+}
+
+.karkas3firstpage{
+  width: 93vw;
+    height: 108vw;
+    top: 150vw;
+    left: 3.5vw;
+    display: flex;
+    position: absolute;
+    z-index: 10;
+}
+  /* ---------- ЦЕНТРАЛЬНЫЙ ЗАЛ ---------- */
+
+  /* .dom2 {
+    position: relative;
+  } */
+
+  /* .karkas2 {
+    width: 98vw;
+    height: 14vw;
+    top: -10vw;
+    left: 1vw;
+  }
+
+  .karkas3 {
+    width: 93vw;
+    height: 88vw;
+    top: -5vw;
+    left: 3.5vw;
+  } */
+
+  .tronzal {
+    width: 100vw;
+    height: 85vw;
+  }
+
+  .zal {
+    width: 100vw;
+    height: 84vw;
+  }
+
+  /* .phonarik {
+    width: 9vw;
+    height: 15vw;
+    left: 12vw;
+    top: 21vw;
+  }
+
+  .pandalevo {
+    width: 21vw;
+    left: 12vw;
+    top: 52vw;
+  }
+
+  .pandacentre {
+    width: 23vw;
+    left: 39vw;
+    top: 47vw;
+  }
+
+  .pandapravo {
+    width: 22vw;
+    left: 65vw;
+    top: 52vw;
+  } */
+
+  /* ---------- НИЖНИЙ ЭТАЖ ---------- */
+
+  /* .karkas4 {
+    width: 98vw;
+    height: 14vw;
+    top: -7vw;
+    left: 1vw;
+  } */
+
+  .karkas5 {
+    width: 93vw;
+    height: 210vw;
+    top: -5vw;
+    left: 3.5vw;
+  }
+
+  .karkasnojka2 {
+    display: none;
+  }
+
+  .karkasthirdpage{
+  width: 98vw;
+    height: 14vw;
+    top: 90vw;
+    left: 1%;
+    display: flex;
+    position: absolute;
+    z-index: 11;
+    justify-content: center;
+    align-items: center;
+}
+
+  .column2 {
+    /* position: relative;
+    z-index: 5;
+    display: flex; */
+    flex-direction: column;
+    align-items: center;
+    /* gap: 0; */
+  }
+
+  .veerascene {
+    width: 100vw;
+    height: 100vw;
+    /* position: relative;
+    transform: scale(1.15);
+    transform-origin: top center;
+    margin-top: 12vw; */
+  }
+
+  .backveer{
+  /* position: relative; */
+  /* top: 4vw; */
+  left: 6vw;   
+  width: 87vw;
+  height: 100vw;
+  /* z-index: 5; */
+}
+
+  .trenirovki {
+    width: 100vw;
+    height: 100vw;
+    /* position: relative;
+    transform: scale(1.12);
+    transform-origin: top center;
+    margin-top: -2vw; */
+  }
+
+  .trenback{
+  /* position: relative; */
+  top: -4vw;
+  left: 8vw;   
+  width: 85vw;
+  height: 100vw;
+}
+
+  /* ---------- ПОДВАЛ ---------- */
+
+  .pochva {
+    width: 100vw;
+    height: 44vw;
+  }
+
+  .podvalimg {
+    width: 92vw;
+    height: 45vw;
+    left: 4vw;
+    top: -2vw;
+  }
+
+  /* ---------- ПОПАПЫ НА МОБИЛКЕ ---------- */
+
+  .popup-img {
+    width: 84vw;
+    height: auto;
+  }
+
+  .close-btn,
+  .close,
+  .closedragon,
+  .closelovi,
+  .closeveer {
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .closedragon {
+    top: 10vw;
+    transform: translateX(33vw);
+  }
+
+  .closelovi {
+    top: 18vw;
+    transform: translateX(28vw);
+  }
+
+  .closeveer {
+    top: 10vw;
+    transform: translateX(34vw);
+  }
+
+  .dragonreference {
+    width: 34vw;
+    height: 34vw;
+    top: 18vw;
+  }
+
+  .dragonboard {
+    width: 44vw;
+    height: 44vw;
+    top: 58vw;
+  }
+
+  .dragontitle {
+    font-size: 4vw;
+    padding: 2vw 5vw;
+  }
+
+  .dragonrulesbg,
+  .dragonwinbg {
+    width: 52vw;
+  }
+
+  .dragonrulestext,
+  .dragonwintext {
+    width: 36vw;
+    font-size: 2.8vw;
+    line-height: 1.3;
+  }
+
+  #polelovli {
+    width: 62vw;
+    height: 76vw;
+    border-radius: 2vw;
+  }
+
+  .lovititle {
+    width: 70vw;
+    top: 5vw;
+  }
+
+  .score {
+    width: 16vw;
+    top: 13vw;
+    left: 6vw;
+  }
+
+  #scoreDisplay {
+    font-size: 4vw;
+  }
+
+  .rules {
+    width: 52vw;
+    height: auto;
+    top: 18vw;
+  }
+
+  .ponbtn {
+    width: 25vw;
+    height: auto;
+    top: 69vw;
+  }
+
+  .falling-item {
+    width: 10vw;
+  }
+
+  #catcher {
+    width: 22vw;
+  }
+
+  .overlay > img {
+    width: 56vw;
+  }
+
+  .overlay button img {
+    width: 28vw;
+  }
+
+  .veerboard {
+    width: 78vw;
+    height: 46vw;
+    top: 28vw;
+  }
+
+  .veerrulesimg {
+    width: 54vw;
+  }
+
+  .ponyatnobtn {
+    width: 24vw;
+    transform: translate(-50%, 21vw);
+  }
+
+  .clearveer {
+    top: 79vw;
+    font-size: 3.2vw;
+    padding: 1.8vw 3.4vw;
+    border-radius: 4vw;
+  }
+}
+
+
 @media screen and (min-width: 451px) and (max-width: 768px) {
 /*    планшет мини */
 }
